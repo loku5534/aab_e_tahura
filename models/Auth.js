@@ -52,13 +52,13 @@ authSchema.pre("save", function (next) {
 authSchema.methods.comparePassword = async function (candidatePassword, cb) {
   const passwordMatch = await bcrypt.compare(candidatePassword, this.password);
   if (passwordMatch) {
-    console.log("Password matches!");
+    // console.log("Password matches!");
   } else {
     console.log("Password mismatch!");
   }
   return passwordMatch;
 };
 
-const auth = mongoose.model("auth", authSchema);
+const auth = mongoose.model("Auth", authSchema);
 
 module.exports = auth;

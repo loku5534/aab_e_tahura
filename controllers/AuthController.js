@@ -12,15 +12,16 @@ const {
 } = require("../utils/jsonwebtoken");
 
 const login = (req, res) => {
-  loginSchema
-    .validate(req.body)
-    .then(async (validatedData) => {
+  try {
+    loginSchema.validate(req.body).then(async (validatedData) => {
       let user = await Auth.findOne({
         email: validatedData.email,
       });
+      // console.log(user)
       if (user !== null) {
         if (await user.comparePassword(validatedData.password)) {
           const token = generateAccessToken(user);
+          console.log(token)
           const refreshToken = generateRefreshToken(user);
           res.status(200).json({
             message: "Logged in successfully!",
@@ -39,23 +40,22 @@ const login = (req, res) => {
         });
       }
     })
-    .catch((error) => {
-      res.json({
-        error: error.errors,
-      });
-    });
+  } catch (error) {
+    res.status(405).json({
+      message: error.message
+    })
 };
+}
 
-const register = (req, res) => {
-  singupSchema
-    .validate(req.body)
-    .then(async (validatedData) => {
-      let user = await Auth.findOne({
-        email: validatedData.email,
-      });
+const register = (req, res) => {singupSchema.validate(req.body).then(async (validatedData) => {
+      let user = await Auth.findOne({email: validatedData.email});
       if (user == null) {
         user = await Auth.create(validatedData);
-        res.json(user);
+        return res.json({
+          data: true,
+          message: "admin Register Successfully",
+          user: user
+        });
       } else {
         res.status(409).json({
           error: "Email already exists!",

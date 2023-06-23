@@ -1,8 +1,12 @@
-const mongoose = require("mongoose");
+/**
+ * 🟢
+ */
+const { Sequelize } = require("sequelize");
 
-const dbURL = process.env.MONGO_URL;
+const sequelize = new Sequelize("water_system", "root", "", {
+  host: "localhost",
+  dialect: "mysql",
+  /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
+});
 
-mongoose
-  .connect(dbURL)
-  .then((result) => console.log(`DB Connected Successfully. ${result}`))
-  .catch((error) => console.log(`Error: ${error}`));
+module.exports = sequelize;

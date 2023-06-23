@@ -1,47 +1,46 @@
-const mongoose = require("mongoose");
-const { string } = require("yup");
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/dbConfig");
+const User = require("./User");
 
-const staffSchema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: true,
-      },
-      lastName: {
-        type: String,
-        required: true,
-      },
-      email: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-      cnic: {
-        type: String,
-        required: true,
-      },
-      phone: {
-        type: String,
-        required: true,
-      },
-      salary: {
-        type: String,
-        required: true,
-      },
-      role: {
-        type: String,
-        required: true,
-      },
-      employeeType: {
-        type: String,
-        required: true,
-      },
-      joiningDate: {
-        type: Date,
-      },
-      note: {
-        type: String,
-      },
+const Staff = sequelize.define(
+  "Staff",
+  {
+    cnic: {
+      type: DataTypes.STRING,
+    },
+    salary: {
+      type: DataTypes.BIGINT,
+    },
+    phone: {
+      type: DataTypes.STRING,
+    },
+    employementType: {
+      type: DataTypes.STRING,
+    },
+    joiningDate: {
+      type: DataTypes.STRING,
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
+    },
+    leavingDate: {
+      type: DataTypes.STRING,
+    },
+    note: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+  },
+  {
+    tableName: "staff",
+  }
+);
+
+Staff.belongsTo(User, {
+  foreignKey: "id",
 });
 
-const staffModel = mongoose.model("Staff", staffSchema);
-module.exports = staffModel;
+// `sequelize.define` also returns the model
+console.log(Staff === sequelize.models.Staff); // true
+
+module.exports = Staff;

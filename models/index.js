@@ -1,4 +1,4 @@
 module.exports = {
-  Auth: require("./Auth"),
-  Staff: require("./Staff")
+  User: require("./User"),
+  Staff: require("./Staff"),
 };

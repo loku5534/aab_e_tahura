@@ -21,7 +21,6 @@ const staffSchema = yup.object().shape({
   role: yup.string().required(),
   employeeType: yup.string().required(),
   joiningDate: yup.string().required(),
-
 });
 
 const resetPasswordSchema = yup.object().shape({
@@ -43,6 +42,26 @@ const updateProfileSchema = yup.object().shape({
   lastName: yup.string().required(),
 });
 
+// Routes Related
+const createRouteSchema = yup.object().shape({
+  title: yup.string().required(),
+  startPoint: yup.string().required(),
+  endPoint: yup.string().required(),
+});
+
+const createSubRouteSchema = yup.object().shape({
+  title: yup.string().required(),
+  routeId: yup.number().required(),
+});
+
+//Vehicles
+const createVehicleSchema = yup.object().shape({
+  brand: yup.string().required(),
+  number: yup.string().required(),
+  model: yup.string().required(),
+  note: yup.string(),
+});
+ 
 module.exports = {
   loginSchema,
   singupSchema,
@@ -51,4 +70,9 @@ module.exports = {
   createPasswordSchema,
   updatePasswordSchema,
   updateProfileSchema,
+  // Routes Related
+  createRouteSchema,
+  createSubRouteSchema,
+  //Vehicles
+  createVehicleSchema,
 };

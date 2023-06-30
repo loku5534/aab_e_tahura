@@ -25,4 +25,4 @@ const Vehicles = sequelize.define(
 // `sequelize.define` also returns the model
 console.log(Vehicles === sequelize.models.Vehicles); // true
 
-module.exports = Routes;
+module.exports = Vehicles;

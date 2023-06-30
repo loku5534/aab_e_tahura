@@ -12,6 +12,8 @@ const DB = {
   DB_TYPE: process.env.DB_TYPE ?? "mysql",
 };
 
+console.log(DB);
+
 const sequelize = new Sequelize(DB.DB_NAME, DB.DB_USER, DB.DB_PASS, {
   host: DB.DB_HOST,
   dialect: DB.DB_TYPE,

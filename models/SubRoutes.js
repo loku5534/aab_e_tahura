@@ -7,6 +7,12 @@ const SubRoutes = sequelize.define(
   {
     title: {
       type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    routeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
   },
   {
@@ -14,9 +20,9 @@ const SubRoutes = sequelize.define(
   }
 );
 
-SubRoutes.belongsTo(Routes, {
-  foreignKey: "id",
-});
+// SubRoutes.belongsTo(Routes, {
+//   foreignKey: "routeId",
+// });
 
 // `sequelize.define` also returns the model
 console.log(SubRoutes === sequelize.models.SubRoutes); // true

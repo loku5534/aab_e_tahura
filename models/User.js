@@ -14,6 +14,11 @@ const User = sequelize.define(
     email: {
       type: DataTypes.STRING,
     },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true,
+    },
     password: {
       type: DataTypes.STRING,
     },
@@ -21,11 +26,12 @@ const User = sequelize.define(
       type: DataTypes.STRING,
     },
     otp: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     otpGenerated: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {

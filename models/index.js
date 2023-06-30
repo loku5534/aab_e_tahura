@@ -3,5 +3,6 @@ module.exports = {
   Staff: require("./Staff"),
   Routes: require("./Routes"),
   SubRoutes: require("./SubRoutes"),
-  
+  Vehicles: require("./Vehicles"),
+  Expenses: require("./Expenses"),
 };

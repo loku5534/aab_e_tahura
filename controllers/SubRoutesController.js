@@ -43,7 +43,7 @@ const create = async (req, res) => {
     });
   } catch (error) {
     return res.status(400).json({
-      error: "Error while retrieving the data: " + error.message,
+      error: "Error while storing the data: " + error.message,
     });
   }
 };

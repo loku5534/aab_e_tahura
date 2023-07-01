@@ -35,7 +35,7 @@ const create = async (req, res) => {
   try {
   } catch (error) {
     return res.status(400).json({
-      error: "Error while retrieving the data: " + error.message,
+      error: "Error while storing the data: " + error.message,
     });
   }
 };
@@ -49,7 +49,7 @@ const update = async (req, res) => {
   try {
   } catch (error) {
     return res.status(400).json({
-      error: "Error while retrieving the data: " + error.message,
+      error: "Error while updating the data: " + error.message,
     });
   }
 };
@@ -63,7 +63,7 @@ const deleteById = async (req, res) => {
   try {
   } catch (error) {
     return res.status(400).json({
-      error: "Error while retrieving the data: " + error.message,
+      error: "Error while deleting the data: " + error.message,
     });
   }
 };

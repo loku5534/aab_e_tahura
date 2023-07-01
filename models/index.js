@@ -5,4 +5,5 @@ module.exports = {
   SubRoutes: require("./SubRoutes"),
   Vehicles: require("./Vehicles"),
   Expenses: require("./Expenses"),
+  Customers: require("./Customers"),
 };

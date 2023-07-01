@@ -61,7 +61,16 @@ const createVehicleSchema = yup.object().shape({
   model: yup.string().required(),
   note: yup.string(),
 });
- 
+
+//Expenses
+const createExpenseSchema = yup.object().shape({
+  title: yup.string().required(),
+  amount: yup.number().required(),
+  category: yup.number().required(),
+  date: yup.mixed().required(),
+  description: yup.string(),
+});
+
 module.exports = {
   loginSchema,
   singupSchema,
@@ -75,4 +84,6 @@ module.exports = {
   createSubRouteSchema,
   //Vehicles
   createVehicleSchema,
+  //Expenses
+  createExpenseSchema,
 };

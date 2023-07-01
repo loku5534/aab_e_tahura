@@ -20,6 +20,7 @@ const {
   routeRoutes,
   subRouteRoutes,
   vehiclesRoutes,
+  expensesRoutes,
 } = require("./routes");
 
 app.use("/api/auth/", authRoutes);
@@ -29,6 +30,8 @@ app.use("/api/routes/", routeRoutes);
 app.use("/api/sub-routes/", subRouteRoutes);
 
 app.use("/api/vehicles/", vehiclesRoutes);
+
+app.use("/api/expenses/", expensesRoutes);
 
 /**
  * 🟢 Required Controlls and paths

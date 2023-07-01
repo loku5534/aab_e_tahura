@@ -20,7 +20,7 @@ const Staff = sequelize.define(
     joiningDate: {
       type: DataTypes.STRING,
     },
-    status: {
+    isActive: {
       type: DataTypes.BOOLEAN,
     },
     leavingDate: {

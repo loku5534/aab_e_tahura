@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const { RoutesController } = require("../controllers");
+const { ExpensesController } = require("../controllers");
 const { verifyToken } = require("../middlewares/index");
 
 router
-  .post("", RoutesController.create)
-  .put("/:id", RoutesController.update)
-  .get("", RoutesController.index)
-  .get("/:id", RoutesController.getById)
-  .delete("/:id", RoutesController.deleteById);
+  .post("", ExpensesController.create)
+  .put("/:id", ExpensesController.update)
+  .get("", ExpensesController.index)
+  .get("/:id", ExpensesController.getById)
+  .delete("/:id", ExpensesController.deleteById);
 
 module.exports = router;

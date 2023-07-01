@@ -1,6 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/dbConfig");
 
+// const categories = ["Office/Place Rent", "Bills", "Fuel Expenses", "Others"];
+
 const Expenses = sequelize.define(
   "Expenses",
   {
@@ -22,7 +24,7 @@ const Expenses = sequelize.define(
     },
     date: {
       type: DataTypes.DATEONLY,
-      allowNull: true,
+      allowNull: false,
     },
   },
   {

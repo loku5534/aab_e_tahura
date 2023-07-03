@@ -5,7 +5,7 @@ const loginSchema = yup.object().shape({
   password: yup.string().required(),
 });
 
-const singupSchema = yup.object().shape({
+const authSchema = yup.object().shape({
   firstName: yup.string().required(),
   lastName: yup.string().required(),
   email: yup.string().email().required(),
@@ -73,7 +73,7 @@ const createExpenseSchema = yup.object().shape({
 
 module.exports = {
   loginSchema,
-  singupSchema,
+  authSchema,
   staffSchema,
   resetPasswordSchema,
   createPasswordSchema,

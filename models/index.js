@@ -1,4 +1,5 @@
 module.exports = {
+  authCluster: require("./Auth"),
   User: require("./User"),
   Staff: require("./Staff"),
   Routes: require("./Routes"),

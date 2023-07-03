@@ -1,5 +1,6 @@
 const sequelize = require("./dbConfig");
 const {
+  auth,
   User,
   Staff,
   Routes,

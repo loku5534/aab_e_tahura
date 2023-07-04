@@ -1,6 +1,8 @@
 const sequlize = require("../config/dbConfig");
 const {authCluster} = require("../models");
 const { authSchema, loginSchema } = require("../utils/schema");
+const {generateAccessToken,
+  generateRefreshToken} = require("../utils/jsonwebtoken")
 
 
 const authRegister = async(req, res) => {
@@ -32,10 +34,14 @@ const authLogin = (req, res) => {
       });
 
       if (authData !== null) {
-        const passwordMatch = await comparePassword(validatedData.password, authData.password);
+        const passwordMatch = await authData.comparePassword(validatedData.password, authData.password);
         if (passwordMatch) {
+          const token = generateAccessToken(authData);
+          const refreshToken = generateRefreshToken(authData);
           res.status(200).json({
             message: 'Logged in successfully!',
+            token: token,
+            refreshToken: refreshToken,
             auth: authData,
           });
         } else {

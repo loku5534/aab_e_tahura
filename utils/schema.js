@@ -71,6 +71,10 @@ const createExpenseSchema = yup.object().shape({
   description: yup.string(),
 });
 
+const createProductCategoriesSchema = yup.object().shape({
+  title: yup.string().required(),
+});
+
 module.exports = {
   loginSchema,
   authSchema,
@@ -86,4 +90,6 @@ module.exports = {
   createVehicleSchema,
   //Expenses
   createExpenseSchema,
+  //ProductCategories
+  createProductCategoriesSchema,
 };

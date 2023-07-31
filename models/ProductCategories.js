@@ -6,16 +6,11 @@ const ProductCategories = sequelize.define(
   {
     title: {
       type: DataTypes.STRING,
-    },
-    startPoint: {
-      type: DataTypes.STRING,
-    },
-    endPoint: {
-      type: DataTypes.STRING,
+      unique: true
     },
   },
   {
-    tableName: "routes",
+    tableName: "product_categories",
   }
 );
 

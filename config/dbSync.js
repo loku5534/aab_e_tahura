@@ -7,6 +7,8 @@ const {
   SubRoutes,
   Vehicles,
   Customers,
+  ProductCategories,
+  Products,
 } = require("../models");
 
 sequelize

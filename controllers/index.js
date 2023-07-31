@@ -4,4 +4,7 @@ module.exports = {
   SubRoutesController: require("./SubRoutesController"),
   VehiclesController: require("./VehiclesController"),
   ExpensesController: require("./ExpensesController"),
+  ImageUploadController: require("./ImageUploadController"),
+  ProductCategoriesController: require("./ProductCategoriesController"),
+  ProductsController: require("./ProductsController"),
 };

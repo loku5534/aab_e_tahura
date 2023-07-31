@@ -7,4 +7,6 @@ module.exports = {
   Vehicles: require("./Vehicles"),
   Expenses: require("./Expenses"),
   Customers: require("./Customers"),
+  ProductCategories: require("./ProductCategories"),
+  Products: require("./Products"),
 };

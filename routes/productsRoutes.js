@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { } = require("../controllers");
-const Controller = ;
+const { ProductsController } = require("../controllers");
+const Controller = ProductsController;
 const { verifyToken } = require("../middlewares/index");
-router.post("");
+
+router.post("", Controller.create);
 
 module.exports = router;

@@ -1,7 +1,6 @@
 const express = require("express");
 const app = new express();
 const bodyParser = require("body-parser");
-app.use(bodyParser.json());
 require("dotenv").config();
 
 const PORT = process.env.PORT || 4001;
@@ -21,7 +20,12 @@ const {
   subRouteRoutes,
   vehiclesRoutes,
   expensesRoutes,
+  imageUploadRoutes,
+  productCategoriesRoutes,
+  productsRoutes,
 } = require("./routes");
+
+app.use(express.static("uploads"));
 
 app.use("/api/auth/", authRoutes);
 
@@ -32,6 +36,12 @@ app.use("/api/sub-routes/", subRouteRoutes);
 app.use("/api/vehicles/", vehiclesRoutes);
 
 app.use("/api/expenses/", expensesRoutes);
+
+app.use("/api/image/", imageUploadRoutes);
+
+app.use("/api/product-categories/", productCategoriesRoutes);
+
+app.use("/api/products/", productsRoutes);
 
 /**
  * 🟢 Required Controlls and paths

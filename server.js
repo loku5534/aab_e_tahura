@@ -25,7 +25,7 @@ const {
   productsRoutes,
 } = require("./routes");
 
-app.use(express.static("uploads"));
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.use("/api/auth/", authRoutes);
 

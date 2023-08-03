@@ -75,6 +75,15 @@ const createProductCategoriesSchema = yup.object().shape({
   title: yup.string().required(),
 });
 
+const createProductSchema = yup.object().shape({
+  image: yup.string().required(),
+  title: yup.string().required(),
+  price: yup.number().required(),
+  onCounter: yup.boolean().required(),
+  onDelivery: yup.boolean().required(),
+  ProductCategoryId: yup.number().required(),
+});
+
 module.exports = {
   loginSchema,
   authSchema,
@@ -92,4 +101,6 @@ module.exports = {
   createExpenseSchema,
   //ProductCategories
   createProductCategoriesSchema,
+  //Products
+  createProductSchema,
 };

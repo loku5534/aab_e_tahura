@@ -23,6 +23,8 @@ const {
   imageUploadRoutes,
   productCategoriesRoutes,
   productsRoutes,
+  userRoutes,
+  staffRoutes,
 } = require("./routes");
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -42,6 +44,10 @@ app.use("/api/image/", imageUploadRoutes);
 app.use("/api/product-categories/", productCategoriesRoutes);
 
 app.use("/api/products/", productsRoutes);
+
+app.use("/api/user/", userRoutes);
+
+app.use("/api/staff/", staffRoutes);
 
 /**
  * 🟢 Required Controlls and paths

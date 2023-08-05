@@ -14,7 +14,7 @@ const Staff = sequelize.define(
     phone: {
       type: DataTypes.STRING,
     },
-    employementType: {
+    employmentType: {
       type: DataTypes.STRING,
     },
     joiningDate: {
@@ -36,9 +36,10 @@ const Staff = sequelize.define(
   }
 );
 
-Staff.belongsTo(User, {
-  foreignKey: "id",
+User.hasOne(Staff, {
+  onDelete: "CASCADE",
 });
+Staff.belongsTo(User);
 
 // `sequelize.define` also returns the model
 console.log(Staff === sequelize.models.Staff); // true

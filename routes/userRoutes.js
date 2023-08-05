@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { StaffController } = require("../controllers");
-const Controller = StaffController;
+const { UserController } = require("../controllers");
+const Controller = UserController;
 const { verifyToken } = require("../middlewares/index");
 
 router

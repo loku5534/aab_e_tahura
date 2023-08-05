@@ -8,4 +8,5 @@ module.exports = {
   productCategoriesRoutes: require("./productCategoriesRoutes"),
   productsRoutes: require("./productsRoutes"),
   staffRoutes: require("./staffRoutes"),
+  userRoutes: require("./userRoutes"),
 };

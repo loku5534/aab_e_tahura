@@ -12,15 +12,28 @@ const authSchema = yup.object().shape({
   password: yup.string().required(),
 });
 
-const staffSchema = yup.object().shape({
+const userSchema = yup.object().shape({
   firstName: yup.string().required(),
   lastName: yup.string().required(),
   email: yup.string().email().required(),
-  cnic: yup.string().required(),
-  phone: yup.string().required(),
+  password: yup.string().required(),
   role: yup.string().required(),
-  employeeType: yup.string().required(),
+});
+
+const staffSchema = yup.object().shape({
+  cnic: yup.string(),
+  salary: yup.string(),
+  phone: yup.string().required(),
+  employmentType: yup.string().required(),
   joiningDate: yup.string().required(),
+  note: yup.string(),
+  isActive: yup.boolean().required(),
+  leavingDate: yup.string().when("isActive", {
+    is: (status) => status === false,
+    then: () => yup.string().required(),
+    otherwise: () => yup.string(),
+  }),
+  UserId: yup.number().required(),
 });
 
 const resetPasswordSchema = yup.object().shape({
@@ -87,6 +100,7 @@ const createProductSchema = yup.object().shape({
 module.exports = {
   loginSchema,
   authSchema,
+  userSchema,
   staffSchema,
   resetPasswordSchema,
   createPasswordSchema,

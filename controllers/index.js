@@ -7,4 +7,6 @@ module.exports = {
   ImageUploadController: require("./ImageUploadController"),
   ProductCategoriesController: require("./ProductCategoriesController"),
   ProductsController: require("./ProductsController"),
+  StaffController: require("./StaffController"),
+  UserController: require("./UserController"),
 };

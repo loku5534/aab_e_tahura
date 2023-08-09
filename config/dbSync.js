@@ -9,6 +9,9 @@ const {
   Customers,
   ProductCategories,
   Products,
+  WalkingCustomers,
+  Invoices,
+  PurchasedItems,
 } = require("../models");
 
 sequelize

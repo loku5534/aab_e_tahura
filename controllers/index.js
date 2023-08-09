@@ -9,4 +9,5 @@ module.exports = {
   ProductsController: require("./ProductsController"),
   StaffController: require("./StaffController"),
   UserController: require("./UserController"),
+  InvoiceController: require("./InvoiceController")
 };

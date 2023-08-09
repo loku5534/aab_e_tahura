@@ -9,4 +9,5 @@ module.exports = {
   productsRoutes: require("./productsRoutes"),
   staffRoutes: require("./staffRoutes"),
   userRoutes: require("./userRoutes"),
+  invoiceRoutes: require("./invoiceRoutes"),
 };

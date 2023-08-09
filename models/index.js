@@ -9,4 +9,7 @@ module.exports = {
   Customers: require("./Customers"),
   ProductCategories: require("./ProductCategories"),
   Products: require("./Products"),
+  WalkingCustomers: require("./WalkingCustomers"),
+  Invoices: require("./Invoices"),
+  PurchasedItems: require("./PurchasedItems"),
 };

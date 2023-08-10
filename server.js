@@ -26,6 +26,7 @@ const {
   userRoutes,
   staffRoutes,
   invoiceRoutes,
+  payoutsRoutes,
 } = require("./routes");
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -51,6 +52,8 @@ app.use("/api/user/", userRoutes);
 app.use("/api/staff/", staffRoutes);
 
 app.use("/api/invoice/", invoiceRoutes);
+
+app.use("/api/payouts/", payoutsRoutes);
 
 /**
  * 🟢 Required Controlls and paths

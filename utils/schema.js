@@ -116,6 +116,24 @@ const createPurchasedItemSchema = yup.object().shape({
   unitPrice: yup.number().required(),
 });
 
+const createPayoutSchema = yup.object().shape({
+  staffId: yup.number().required(),
+  date: yup.string().required(),
+  hasBonus: yup.boolean().required(),
+  bonusAmount: yup.number().when("hasBonus", {
+    is: (value) => value === true,
+    then: () => yup.number().required(),
+    otherwise: () => yup.number(),
+  }),
+  hasDeduction: yup.boolean().required(),
+  deductionAmount: yup.number().when("hasDeduction", {
+    is: (value) => value === true,
+    then: () => yup.number().required(),
+    otherwise: () => yup.number(),
+  }),
+  note: yup.string(),
+});
+
 module.exports = {
   loginSchema,
   authSchema,
@@ -140,4 +158,6 @@ module.exports = {
   createInvoiceSchema,
   //Purchased Item
   createPurchasedItemSchema,
+  //Payout
+  createPayoutSchema,
 };

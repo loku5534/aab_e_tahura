@@ -12,4 +12,5 @@ module.exports = {
   WalkingCustomers: require("./WalkingCustomers"),
   Invoices: require("./Invoices"),
   PurchasedItems: require("./PurchasedItems"),
+  Payouts: require("./Payouts"),
 };

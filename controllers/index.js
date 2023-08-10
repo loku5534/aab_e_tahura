@@ -11,4 +11,5 @@ module.exports = {
   UserController: require("./UserController"),
   InvoiceController: require("./InvoiceController"),
   PurchasedItemController: require("./PurchasedItemController"),
+  PayoutsController: require("./PayoutsController"),
 };

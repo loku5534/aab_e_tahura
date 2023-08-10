@@ -10,4 +10,5 @@ module.exports = {
   staffRoutes: require("./staffRoutes"),
   userRoutes: require("./userRoutes"),
   invoiceRoutes: require("./invoiceRoutes"),
+  payoutsRoutes: require("./payoutsRoutes"),
 };

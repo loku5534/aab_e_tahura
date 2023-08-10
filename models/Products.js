@@ -1,6 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/dbConfig");
 const ProductCategories = require("./ProductCategories");
+const PurchasedItems = require("./PurchasedItems");
 
 const Products = sequelize.define(
   "Products",
@@ -22,7 +23,7 @@ const Products = sequelize.define(
     onCounter: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
-    }
+    },
   },
   {
     tableName: "products",
@@ -30,6 +31,7 @@ const Products = sequelize.define(
 );
 
 Products.belongsTo(ProductCategories);
+Products.hasOne(PurchasedItems, { foreignKey: "productId" });
 
 // `sequelize.define` also returns the model
 console.log(Products === sequelize.models.Products); // true

@@ -5,25 +5,25 @@ const PurchasedItems = require("./PurchasedItems");
 const Invoices = sequelize.define(
   "Invoices", // Remove the extra space here
   {
-    invoice_number: {
+    invoiceNumber: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },
-    customer_id: {
+    customerId: {
       type: DataTypes.BIGINT,
       allowNull: true,
     },
-    customer_type: {
+    customerType: {
       type: DataTypes.STRING,
-      defaultValue: 'walking-customer',
+      defaultValue: "walking-customer",
       allowNull: false,
     },
-    invoice_date: {
-      type: DataTypes.DATE,
+    invoiceDate: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    total_amount: {
+    totalAmount: {
       type: DataTypes.DECIMAL,
       defaultValue: 0,
     },
@@ -31,7 +31,7 @@ const Invoices = sequelize.define(
       type: DataTypes.STRING,
       defaultValue: "paid",
     },
-    payment_method: {
+    paymentMethod: {
       type: DataTypes.STRING,
       defaultValue: "cash",
     },
@@ -41,7 +41,7 @@ const Invoices = sequelize.define(
   }
 );
 
-Invoices.hasMany(PurchasedItems, { foreignKey: "invoice_id" }); // Use the correct foreign key "invoice_id"
+Invoices.hasMany(PurchasedItems, { foreignKey: "invoiceId" }); // Use the correct foreign key "invoice_id"
 
 // `sequelize.define` also returns the model
 console.log(Invoices === sequelize.models.Invoices); // true

@@ -97,6 +97,25 @@ const createProductSchema = yup.object().shape({
   ProductCategoryId: yup.number().required(),
 });
 
+const createInvoiceSchema = yup.object().shape({
+  invoiceNumber: yup.string().required(),
+  customerId: yup.number(),
+  customerType: yup.string().required(),
+  invoiceDate: yup.string().required(),
+  totalAmount: yup.number().required(),
+  status: yup.string(),
+  paymentMethod: yup.string(),
+});
+
+const createPurchasedItemSchema = yup.object().shape({
+  invoiceId: yup.number().required(),
+  productId: yup.number(),
+  image: yup.string().required(),
+  itemName: yup.string().required(),
+  quantity: yup.number().required(),
+  unitPrice: yup.number().required(),
+});
+
 module.exports = {
   loginSchema,
   authSchema,
@@ -117,4 +136,8 @@ module.exports = {
   createProductCategoriesSchema,
   //Products
   createProductSchema,
+  //Invoice
+  createInvoiceSchema,
+  //Purchased Item
+  createPurchasedItemSchema,
 };

@@ -79,7 +79,7 @@ const createVehicleSchema = yup.object().shape({
 const createExpenseSchema = yup.object().shape({
   title: yup.string().required(),
   amount: yup.number().required(),
-  category: yup.number().required(),
+  category: yup.string().required(),
   date: yup.mixed().required(),
   description: yup.string(),
 });

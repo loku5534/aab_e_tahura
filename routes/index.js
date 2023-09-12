@@ -4,6 +4,7 @@ module.exports = {
   subRouteRoutes: require("./subRoutesRoutes"),
   vehiclesRoutes: require("./vehiclesRoutes"),
   expensesRoutes: require("./expensesRoutes"),
+  expenseCategoriesRoutes: require("./expenseCategoriesRoutes"),
   imageUploadRoutes: require("./imageUploadRoutes"),
   productCategoriesRoutes: require("./productCategoriesRoutes"),
   productsRoutes: require("./productsRoutes"),
@@ -11,4 +12,5 @@ module.exports = {
   userRoutes: require("./userRoutes"),
   invoiceRoutes: require("./invoiceRoutes"),
   payoutsRoutes: require("./payoutsRoutes"),
+  statsRoutes: require("./statsRoutes"),
 };

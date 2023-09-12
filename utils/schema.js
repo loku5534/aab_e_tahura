@@ -79,9 +79,13 @@ const createVehicleSchema = yup.object().shape({
 const createExpenseSchema = yup.object().shape({
   title: yup.string().required(),
   amount: yup.number().required(),
-  category: yup.string().required(),
   date: yup.mixed().required(),
   description: yup.string(),
+  ExpenseCategoryId: yup.number().required(),
+});
+
+const createExpenseCategoriesSchema = yup.object().shape({
+  title: yup.string().required(),
 });
 
 const createProductCategoriesSchema = yup.object().shape({
@@ -102,7 +106,11 @@ const createInvoiceSchema = yup.object().shape({
   customerId: yup.number(),
   customerType: yup.string().required(),
   invoiceDate: yup.string().required(),
+  invoiceTime: yup.string().required(),
+  subtotalAmount: yup.number().required(),
   totalAmount: yup.number().required(),
+  discountAmount: yup.number(),
+  notes: yup.string(),
   status: yup.string(),
   paymentMethod: yup.string(),
 });
@@ -150,6 +158,8 @@ module.exports = {
   createVehicleSchema,
   //Expenses
   createExpenseSchema,
+  //ExpenseCategories
+  createExpenseCategoriesSchema,
   //ProductCategories
   createProductCategoriesSchema,
   //Products

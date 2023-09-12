@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/dbConfig");
+const ExpenseCategories = require("./ExpenseCategories");
 
 // const categories = ["Office/Place Rent", "Bills", "Fuel Expenses", "Others"];
 
@@ -13,10 +14,6 @@ const Expenses = sequelize.define(
     amount: {
       type: DataTypes.DECIMAL,
       defaultValue: 0.0,
-    },
-    category: {
-      type: DataTypes.STRING,
-      defaultValue: 0,
     },
     description: {
       type: DataTypes.STRING,
@@ -32,6 +29,8 @@ const Expenses = sequelize.define(
     timestamps: false,
   }
 );
+
+Expenses.belongsTo(ExpenseCategories);
 
 // `sequelize.define` also returns the model
 console.log(Expenses === sequelize.models.Expenses); // true

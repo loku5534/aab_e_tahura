@@ -27,6 +27,8 @@ const {
   staffRoutes,
   invoiceRoutes,
   payoutsRoutes,
+  expenseCategoriesRoutes,
+  statsRoutes,
 } = require("./routes");
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -41,6 +43,8 @@ app.use("/api/vehicles/", vehiclesRoutes);
 
 app.use("/api/expenses/", expensesRoutes);
 
+app.use("/api/expense-categories/", expenseCategoriesRoutes);
+
 app.use("/api/image/", imageUploadRoutes);
 
 app.use("/api/product-categories/", productCategoriesRoutes);
@@ -54,6 +58,8 @@ app.use("/api/staff/", staffRoutes);
 app.use("/api/invoice/", invoiceRoutes);
 
 app.use("/api/payouts/", payoutsRoutes);
+
+app.use("/api/stats", statsRoutes);
 
 /**
  * 🟢 Required Controlls and paths

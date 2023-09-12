@@ -7,6 +7,7 @@ const {
   SubRoutes,
   Vehicles,
   Customers,
+  ExpenseCategories,
   ProductCategories,
   Products,
   WalkingCustomers,
@@ -16,7 +17,10 @@ const {
 
 sequelize
   .sync({ force: true })
-  .then(() => {
+  .then(async () => {
+    await ProductCategories.create({ title: "Uncategorized" });
+    await ExpenseCategories.create({ title: "Uncategorized" });
+    console.log("Default categories inserted");
     console.log("Models synced with the database");
   })
   .catch((error) => {

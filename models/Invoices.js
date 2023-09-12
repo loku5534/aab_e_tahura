@@ -23,9 +23,24 @@ const Invoices = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    invoiceTime: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    subtotalAmount: {
+      type: DataTypes.DECIMAL,
+      defaultValue: 0,
+    },
     totalAmount: {
       type: DataTypes.DECIMAL,
       defaultValue: 0,
+    },
+    discountAmount: {
+      type: DataTypes.DECIMAL,
+      defaultValue: 0,
+    },
+    notes: {
+      type: DataTypes.STRING,
     },
     status: {
       type: DataTypes.STRING,

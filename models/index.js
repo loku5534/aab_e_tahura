@@ -6,6 +6,7 @@ module.exports = {
   SubRoutes: require("./SubRoutes"),
   Vehicles: require("./Vehicles"),
   Expenses: require("./Expenses"),
+  ExpenseCategories: require("./ExpenseCategories"),
   Customers: require("./Customers"),
   ProductCategories: require("./ProductCategories"),
   Products: require("./Products"),

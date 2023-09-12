@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/dbConfig");
 
-const ProductCategories = sequelize.define(
-  "ProductCategories",
+const ExpenseCategories = sequelize.define(
+  "ExpenseCategories",
   {
     title: {
       type: DataTypes.STRING,
@@ -10,11 +10,11 @@ const ProductCategories = sequelize.define(
     },
   },
   {
-    tableName: "product_categories",
+    tableName: "expense_categories",
   }
 );
 
 // `sequelize.define` also returns the model
-console.log(ProductCategories === sequelize.models.ProductCategories); // true
+console.log(ExpenseCategories === sequelize.models.ExpenseCategories); // true
 
-module.exports = ProductCategories;
+module.exports = ExpenseCategories;

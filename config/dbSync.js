@@ -16,11 +16,22 @@ const {
 } = require("../models");
 
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(async () => {
-    await ProductCategories.create({ title: "Uncategorized" });
-    await ExpenseCategories.create({ title: "Uncategorized" });
-    console.log("Default categories inserted");
+    let productCategory = await ProductCategories.findOne({
+      where: { title: "Uncategorized" },
+    });
+    if (productCategory === null) {
+      await ProductCategories.create({ title: "Uncategorized" });
+      console.log("Default product category inserted");
+    }
+    let expenseCategory = await ExpenseCategories.findOne({
+      where: { title: "Uncategorized" },
+    });
+    if (expenseCategory === null) {
+      await ExpenseCategories.create({ title: "Uncategorized" });
+      console.log("Default expense category inserted");
+    }
     console.log("Models synced with the database");
   })
   .catch((error) => {
